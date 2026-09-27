@@ -1,0 +1,3063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yazh Creations — Handmade Resin & Crochet, Made Personal</title>
+<meta name="description" content="Handmade resin and crochet pieces, made to order in India. Coasters, jewellery, granny square bags, and amigurumi. Customise colors, initials, and designs via WhatsApp.">
+<meta property="og:title" content="Yazh Creations — Handmade Resin & Crochet, Made Personal">
+<meta property="og:description" content="Small-batch botanical resin art and handcrafted crochet pieces, customised for you. Direct WhatsApp ordering.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23F5F0E6'/%3E%3Cpath d='M32 12c9 12 14 19 14 26a14 14 0 0 1-28 0c0-7 5-14 14-26z' fill='%23B46B28'/%3E%3C/svg%3E">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS & ROOTS
+   ============================================================ */
+:root {
+  --cream: #FAF6F0;
+  --sand: #EFE6D8;
+  --sand-dark: #DECFAF;
+  --ink: #221A15;
+  --ink-soft: #635649;
+  --ink-light: #8E7E6E;
+  --line: #E5DAC7;
+  --amber: #B46B28;
+  --amber-dark: #914F16;
+  --amber-soft: #F9EBD7;
+  --amber-glow: rgba(180, 107, 40, 0.12);
+  --plum: #743E51;
+  --plum-dark: #582B3B;
+  --plum-soft: #F5E8EC;
+  --sage: #45624E;
+  --sage-soft: #E6EEE8;
+  --white: #FFFFFF;
+  --surface: #FFFDF9;
+  --error: #BA3325;
+  --ok: #2E6B44;
+  --radius-sm: 8px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --shadow-subtle: 0 4px 16px -4px rgba(34, 26, 21, 0.06);
+  --shadow-card: 0 12px 30px -10px rgba(34, 26, 21, 0.1);
+  --shadow-elevated: 0 24px 50px -16px rgba(34, 26, 21, 0.18);
+  --shadow-hover: 0 20px 40px -12px rgba(180, 107, 40, 0.22);
+  --maxw: 1220px;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nav-h: 74px;
+}
+
+/* ============================================================
+   RESET & DEFAULTS
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg { max-width: 100%; display: block; }
+button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4, h5, p, figure { margin: 0; }
+button { cursor: pointer; border: none; background: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute; left: 16px; top: -70px;
+  background: var(--ink); color: var(--white);
+  padding: 12px 20px; border-radius: var(--radius-sm);
+  z-index: 300; transition: top .25s ease;
+  font-weight: 600; font-size: .92rem;
+}
+.skip-link:focus { top: 16px; }
+
+/* ============================================================
+   LAYOUT & TYPOGRAPHY HELPERS
+   ============================================================ */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.section { padding: 76px 0; }
+.section-head { max-width: 680px; margin: 0 0 38px; }
+.section-head.center { margin: 0 auto 46px; text-align: center; }
+.eyebrow {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--amber);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-head.center .eyebrow { justify-content: center; }
+.eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--amber);
+  opacity: 0.6;
+}
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; color: var(--ink); }
+h1 { font-size: clamp(2.3rem, 1.8rem + 2.8vw, 3.8rem); line-height: 1.1; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.7rem); line-height: 1.2; letter-spacing: -0.01em; }
+h3 { font-size: 1.35rem; line-height: 1.3; }
+.lede { color: var(--ink-soft); font-size: 1.1rem; line-height: 1.65; max-width: 56ch; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (min-width: 768px) {
+  .section { padding: 104px 0; }
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(34, 26, 21, 0.2);
+}
+.btn-primary:hover {
+  background: var(--amber-dark);
+  box-shadow: 0 8px 24px var(--amber-glow);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+.btn-amber {
+  background: var(--amber);
+  color: var(--white);
+  box-shadow: 0 4px 14px var(--amber-glow);
+}
+.btn-amber:hover {
+  background: var(--amber-dark);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.btn-whatsapp {
+  background: #25D366;
+  color: #0b381a;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+.btn-whatsapp:hover {
+  background: #1eb956;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.4);
+}
+.btn-block { width: 100%; }
+.btn-sm { padding: 9px 18px; min-height: 40px; font-size: 0.88rem; }
+
+/* ============================================================
+   HEADER / NAVIGATION
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 150;
+  background: rgba(250, 246, 240, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(229, 218, 199, 0.6);
+  transition: all 0.3s ease;
+}
+.site-header.is-scrolled {
+  background: rgba(250, 246, 240, 0.98);
+  border-color: var(--line);
+  box-shadow: 0 10px 30px -15px rgba(34, 26, 21, 0.12);
+}
+.nav-row {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand em { font-style: italic; color: var(--amber); }
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber);
+}
+.brand-mark svg { width: 18px; height: 18px; }
+
+.nav-links { display: none; align-items: center; gap: 32px; }
+.nav-links a {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-actions { display: flex; align-items: center; gap: 14px; }
+.nav-cta { display: none; }
+.inquiry-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+.inquiry-badge-btn:hover { border-color: var(--amber); background: var(--amber-soft); }
+.inquiry-count {
+  background: var(--amber);
+  color: var(--white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+.menu-toggle svg { width: 22px; height: 22px; }
+.menu-toggle .icon-close { display: none; }
+.menu-toggle[aria-expanded="true"] .icon-open { display: none; }
+.menu-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  background: var(--cream);
+  z-index: 140;
+  overflow-y: auto;
+  padding: 30px 24px 60px;
+  border-top: 1px solid var(--line);
+}
+.mobile-menu.is-open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 16px 0;
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+.mobile-menu .btn { margin-top: 26px; }
+
+@media (min-width: 960px) {
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .menu-toggle { display: none; }
+  .mobile-menu { display: none !important; }
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  padding: 36px 0 54px;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 960px) { .hero { padding: 64px 0 76px; } }
+.hero-grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 54px; }
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  border: 1px solid rgba(180, 107, 40, 0.25);
+  color: var(--amber-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.hero-tag svg { width: 14px; height: 14px; }
+.hero-copy h1 { margin-bottom: 20px; }
+.hero-copy .lede { margin-bottom: 30px; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.hero-meta li { display: flex; align-items: center; gap: 8px; }
+.hero-meta svg { width: 16px; height: 16px; color: var(--amber); flex: none; }
+
+.hero-visual-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.hero-visual-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.hero-visual-card:hover img { transform: scale(1.03); }
+.hero-floating-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 253, 249, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 218, 199, 0.8);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.badge-title { font-weight: 700; font-size: 0.92rem; color: var(--ink); }
+.badge-sub { font-size: 0.8rem; color: var(--ink-soft); }
+.badge-stars { color: #E5A118; display: flex; gap: 2px; }
+
+/* ============================================================
+   TRUST STRIP
+   ============================================================ */
+.trust-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--sand);
+}
+.trust-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+  padding: 28px 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .trust-list { grid-template-columns: repeat(4, 1fr); }
+}
+.trust-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.trust-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--sand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber);
+}
+.trust-icon-box svg { width: 20px; height: 20px; }
+
+/* ============================================================
+   CATEGORY SHOWCASE CARDS
+   ============================================================ */
+.category-grid {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .category-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+.category-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+.category-card-media {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+}
+.category-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.category-card:hover .category-card-media img {
+  transform: scale(1.05);
+}
+.category-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+}
+.category-card-content {
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.category-card h3 { font-size: 1.6rem; margin-bottom: 10px; }
+.category-card p { color: var(--ink-soft); margin-bottom: 22px; flex: 1; }
+.category-card .btn { align-self: flex-start; }
+
+/* ============================================================
+   COLLECTIONS / PRODUCTS / FILTERS & SEARCH
+   ============================================================ */
+.products-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 34px;
+}
+@media (min-width: 860px) {
+  .products-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.filter-tab:hover {
+  border-color: var(--amber);
+  color: var(--ink);
+}
+.filter-tab.is-active {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+.search-box-wrap {
+  position: relative;
+  min-width: 260px;
+}
+.search-input {
+  width: 100%;
+  padding: 10px 16px 10px 38px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.search-input:focus {
+  border-color: var(--amber);
+  background: var(--white);
+  outline: none;
+}
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--ink-light);
+  pointer-events: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--sand-dark);
+}
+.product-visual-wrap {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--sand);
+}
+.product-visual-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.product-card:hover .product-visual-wrap img {
+  transform: scale(1.06);
+}
+.product-badge-custom {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(222, 207, 175, 0.6);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--amber-dark);
+  letter-spacing: 0.02em;
+}
+.quick-view-btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.2s ease;
+}
+.product-card:hover .quick-view-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.quick-view-btn:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.product-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.product-cat-tag {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--amber-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.product-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.product-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.product-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.product-price-box {
+  display: flex;
+  flex-direction: column;
+}
+.product-price-label { font-size: 0.7rem; color: var(--ink-light); text-transform: uppercase; }
+.product-price-val { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+
+.product-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-request-item {
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-request-item:hover {
+  background: var(--amber-dark);
+  border-color: var(--amber-dark);
+}
+.btn-add-tray {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.btn-add-tray:hover {
+  background: var(--amber-soft);
+  border-color: var(--amber);
+  color: var(--amber-dark);
+}
+.btn-add-tray.is-added {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: var(--white);
+}
+
+.no-results-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   QUICK VIEW MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 26, 21, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.is-open { display: flex; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  max-width: 820px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-elevated);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 28px;
+}
+@media (min-width: 768px) {
+  .modal-content { grid-template-columns: 1fr 1.15fr; }
+}
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+.modal-close-btn:hover { background: var(--ink); color: var(--white); }
+.modal-img-wrap {
+  aspect-ratio: 1/1;
+  background: var(--sand);
+  overflow: hidden;
+}
+.modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.modal-body {
+  padding: 32px 28px 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 767px) {
+  .modal-body { padding: 0 24px 28px; }
+}
+.modal-spec-list {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+  background: var(--cream);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+}
+.modal-spec-row { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding-bottom: 6px; }
+.modal-spec-row:last-child { border-bottom: none; padding-bottom: 0; }
+.modal-spec-label { color: var(--ink-soft); }
+.modal-spec-value { font-weight: 600; color: var(--ink); }
+
+/* ============================================================
+   INQUIRY TRAY DRAWER (CART / WISH-LIST FOR CUSTOM ORDER)
+   ============================================================ */
+.tray-drawer-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 130;
+  background: var(--ink);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-elevated);
+  display: none;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  transition: all 0.2s ease;
+}
+.tray-drawer-btn.is-active { display: inline-flex; }
+.tray-drawer-btn:hover { background: var(--amber-dark); transform: translateY(-2px); }
+
+/* ============================================================
+   CUSTOM ORDER EXPLAINER
+   ============================================================ */
+.explainer {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--radius-xl);
+  padding: 42px 28px;
+  display: grid;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .explainer {
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: 64px 56px;
+    gap: 48px;
+    align-items: center;
+  }
+}
+.explainer h2 { color: var(--white); }
+.explainer .lede { color: #DED3C4; }
+.explainer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+.explainer-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: #EFE8DC;
+  align-items: flex-start;
+}
+.explainer-icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(180, 107, 40, 0.35);
+  color: var(--amber-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin-top: 2px;
+}
+.explainer-icon-circle svg { width: 14px; height: 14px; }
+
+/* ============================================================
+   HOW IT WORKS STEPS
+   ============================================================ */
+.steps {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .steps { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+}
+.step {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.step-num {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--amber);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+.step h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.step p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.5; }
+
+/* ============================================================
+   CUSTOM ORDER BUILDER & FORM
+   ============================================================ */
+.order-builder-layout {
+  display: grid;
+  gap: 32px;
+  margin-top: 48px;
+}
+@media (min-width: 992px) {
+  .order-builder-layout { grid-template-columns: 1.25fr 0.75fr; gap: 40px; }
+}
+.order-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-card);
+}
+@media (min-width: 768px) { .order-panel { padding: 44px 38px; } }
+
+.form-grid { display: grid; gap: 20px; }
+@media (min-width: 640px) { .form-grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label { font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+.field .hint { font-size: 0.8rem; color: var(--ink-soft); font-weight: 400; }
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"],
+.field select,
+.field textarea {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  padding: 13px 16px;
+  min-height: 50px;
+  width: 100%;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--amber);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--amber-glow);
+  outline: none;
+}
+.field.has-error input, .field.has-error select, .field.has-error textarea {
+  border-color: var(--error);
+}
+.field-error { font-size: 0.8rem; color: var(--error); display: none; }
+.field.has-error .field-error { display: block; }
+
+fieldset { border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+legend { font-size: 0.9rem; font-weight: 600; padding: 0; margin-bottom: 4px; }
+.radio-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.radio-chip { position: relative; }
+.radio-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.radio-chip label {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--cream);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.radio-chip input:checked + label {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
+}
+.radio-chip input:focus-visible + label {
+  outline: 2.5px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.upload-box {
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  padding: 26px 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.upload-box.is-drag { border-color: var(--amber); background: var(--amber-soft); }
+.upload-box svg { width: 34px; height: 34px; color: var(--amber); margin: 0 auto 12px; }
+.upload-box p { font-size: 0.9rem; color: var(--ink-soft); }
+.upload-box input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer;
+}
+.upload-preview {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+.upload-preview.is-visible { display: flex; }
+.upload-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex: none;
+}
+.upload-preview .file-name { font-size: 0.88rem; font-weight: 600; word-break: break-all; }
+.upload-preview .file-meta { font-size: 0.78rem; color: var(--ink-soft); }
+.upload-remove {
+  margin-left: auto;
+  color: var(--error);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+.upload-error { font-size: 0.82rem; color: var(--error); display: none; margin-top: 8px; }
+.upload-error.is-visible { display: block; }
+
+.form-submit-row { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.form-note { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+
+/* Real-time Order Summary / WhatsApp Preview Sidebar */
+.order-sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar-title { font-size: 1.25rem; font-weight: 600; }
+.selected-tray-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+}
+.tray-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--cream);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+}
+.tray-item-name { font-weight: 600; }
+.tray-item-remove { color: var(--error); font-size: 0.8rem; cursor: pointer; }
+.tray-empty-hint { font-size: 0.86rem; color: var(--ink-soft); font-style: italic; }
+
+.wa-preview-box {
+  background: #E8F5E9;
+  border: 1px solid #C8E6C9;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  color: #1B5E20;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 240px;
+  overflow-y: auto;
+  line-height: 1.5;
+}
+
+.order-success {
+  display: none;
+  text-align: center;
+  padding: 40px 16px;
+}
+.order-success.is-visible { display: block; }
+.order-success .ok-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #25D366;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+}
+.order-success .ok-badge svg { width: 34px; height: 34px; }
+.order-success h3 { font-size: 1.6rem; margin-bottom: 12px; }
+.order-success p { color: var(--ink-soft); max-width: 48ch; margin: 0 auto 26px; }
+.order-form.is-hidden { display: none; }
+
+/* ============================================================
+   ARTISAN REVIEWS / TESTIMONIALS
+   ============================================================ */
+.reviews-grid {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.2s ease;
+}
+.review-card:hover { transform: translateY(-4px); }
+.review-stars { color: #E5A118; display: flex; gap: 3px; font-size: 1rem; }
+.review-text { font-size: 0.94rem; color: var(--ink); line-height: 1.6; font-style: italic; }
+.review-author-wrap { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--amber-soft);
+  color: var(--amber-dark);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+.review-author-name { font-weight: 600; font-size: 0.9rem; }
+.review-tag { font-size: 0.76rem; color: var(--ink-light); }
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.faq-item.is-open { border-color: var(--amber); }
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--amber);
+  transition: transform 0.25s ease;
+  flex: none;
+}
+.faq-item.is-open .faq-icon { transform: rotate(180deg); }
+.faq-answer {
+  display: none;
+  padding: 0 24px 22px;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+.faq-item.is-open .faq-answer { display: block; }
+
+/* ============================================================
+   INSTAGRAM GALLERY
+   ============================================================ */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 640px) { .insta-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .insta-grid { grid-template-columns: repeat(6, 1fr); } }
+.insta-tile {
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-subtle);
+  background: var(--sand);
+}
+.insta-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.insta-tile:hover img { transform: scale(1.1); }
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 26, 21, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.insta-tile:hover .insta-overlay { opacity: 1; }
+.insta-overlay svg { width: 28px; height: 28px; }
+
+.insta-follow-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  font-size: 1rem;
+}
+.insta-follow-row svg { width: 22px; height: 22px; color: var(--plum); }
+
+/* ============================================================
+   ABOUT THE STUDIO
+   ============================================================ */
+.about-grid { display: grid; gap: 36px; }
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center; }
+}
+.about-art-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+  border: 1px solid var(--line);
+}
+.about-art-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.about-copy p { color: var(--ink-soft); margin-bottom: 18px; font-size: 1.05rem; }
+.about-copy p:last-child { margin-bottom: 0; }
+.studio-perks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 26px;
+}
+.studio-perk {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.studio-perk svg { width: 20px; height: 20px; color: var(--amber); flex: none; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid { display: grid; gap: 20px; }
+@media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(3, 1fr); } }
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--amber);
+}
+.contact-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--amber-soft);
+  color: var(--amber-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-icon-wrap svg { width: 24px; height: 24px; }
+.contact-card h3 { font-size: 1.15rem; }
+.contact-card p { color: var(--ink-soft); font-size: 0.92rem; }
+.contact-card a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 0.95rem;
+}
+.contact-card a:hover { color: var(--amber-dark); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--ink);
+  color: #D9CFC0;
+  padding: 64px 0 30px;
+  margin-top: 30px;
+}
+.footer-grid { display: grid; gap: 40px; }
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+}
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--white);
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.footer-brand em { font-style: italic; color: var(--amber-soft); }
+.site-footer p { font-size: 0.9rem; line-height: 1.6; color: #BDB2A0; max-width: 36ch; }
+.footer-col h4 {
+  color: var(--white);
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+.footer-col a { font-size: 0.9rem; color: #C9BEA9; transition: color 0.2s ease; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 48px;
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #9C9080;
+}
+
+/* ============================================================
+   FLOATING WHATSAPP
+   ============================================================ */
+.float-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 120;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.float-whatsapp:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.55);
+}
+.float-whatsapp svg { width: 30px; height: 30px; }
+
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.is-shown { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     ICON SPRITE (SVG SYMBOLS)
+     ============================================================ -->
+<svg class="visually-hidden" aria-hidden="true">
+<defs>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c4 5.2 6.5 8.6 6.5 11.7A6.5 6.5 0 0 1 5.5 14.7C5.5 11.6 8 8.2 12 3z"/></symbol>
+  <symbol id="i-yarn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.6"/><path d="M12 4v16M4 12h16" stroke-dasharray="1 3"/></symbol>
+  <symbol id="i-flower" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2.4"/><path d="M12 9.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM12 20.4a3 3 0 1 1 0-6 3 3 0 0 1 0 6zM9.6 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM20.4 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></symbol>
+  <symbol id="i-ring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="14" r="6.2"/><path d="M9 8l3-5 3 5"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3.4"/><path d="M10.3 10.3 19 19M15 15l2-2M18 18l2-2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7.5-4.6-9.6-9C.8 7.4 3 4 6.4 4c2 0 3.5 1.2 4.6 2.7C12.1 5.2 13.6 4 15.6 4 19 4 21.2 7.4 19.6 11 17.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 12.5 9.5 18 20 6"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.6 1.1 2.8c.1.2 1.8 2.9 4.5 4 .6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m4 6.5 8 6.5 8-6.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16z"/><path d="M4 20 14 10"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M3 8v9l9 4 9-4V8"/><path d="M12 12v9"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></symbol>
+</defs>
+</svg>
+
+<!-- ============================================================
+     HEADER / NAVBAR
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark"><svg aria-hidden="true"><use href="#i-drop"/></svg></span>
+      Yazh <em>Creations</em>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary Navigation">
+      <a href="#home">Home</a>
+      <a href="#collections">Shop Catalog</a>
+      <a href="#custom-order">Custom Orders</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button type="button" class="inquiry-badge-btn" id="navTrayBtn" title="View selected inquiry items">
+        <svg style="width:16px; height:16px;" aria-hidden="true"><use href="#i-bag"/></svg>
+        <span>Inquiry</span>
+        <span class="inquiry-count" id="navTrayCount">0</span>
+      </button>
+
+      <a class="btn btn-primary btn-sm nav-cta" href="#custom-order">Start Custom Order</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg class="icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#collections">Shop Catalog</a>
+  <a href="#custom-order">Custom Orders</a>
+  <a href="#reviews">Client Reviews</a>
+  <a href="#faq">FAQ & Care</a>
+  <a href="#about">About the Studio</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary btn-block" href="#custom-order">Start a Custom Order</a>
+</div>
+
+<main id="main">
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal-up" id="heroCopy">
+      <div class="hero-tag">
+        <svg aria-hidden="true"><use href="#i-sparkle"/></svg>
+        <span>Handcrafted Small Batches • Pan-India Delivery</span>
+      </div>
+      <h1>Poured in crystal resin.<br>Looped stitch by stitch.</h1>
+      <p class="lede">Artisanal botanical resin coasters, floral pendants, and handcrafted crochet totes & amigurumi toys. Pick your flower palette, initials, or yarn colors — crafted personally for you and confirmed over WhatsApp.</p>
+      
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#custom-order">
+          <svg style="width:18px;height:18px;" aria-hidden="true"><use href="#i-sparkle"/></svg>
+          Start a Custom Order
+        </a>
+        <a class="btn btn-outline" href="#collections">Explore Collections</a>
+      </div>
+
+      <ul class="hero-meta">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>100% Made to Order</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Real Botanical Flowers</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Direct WhatsApp Quotes</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual-card reveal-up" id="heroVisual">
+      <img src="images/studio_hero.jpg" alt="Artisan workspace at Yazh Creations with resin botanical coasters and colorful yarn spools" loading="eager">
+      <div class="hero-floating-badge">
+        <div>
+          <div class="badge-title">Handmade with Passion in India</div>
+          <div class="badge-sub">Over 500+ custom keepsakes crafted</div>
+        </div>
+        <div class="badge-stars" aria-label="5 out of 5 stars">
+          ★★★★★
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST STRIP
+     ============================================================ -->
+<div class="trust-strip">
+  <ul class="wrap trust-list">
+    <li>
+      <div class="trust-icon-box"><svg aria-hidden="true"><use href="#i-box"/></svg></div>
+      <span>Handmade to Order</span>
+    </li>
+    <li>
+      <div class="trust-icon-box"><svg aria-hidden="true"><use href="#i-sparkle"/></svg></div>
+      <span>Non-Yellowing UV Resin</span>
+    </li>
+    <li>
+      <div class="trust-icon-box"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+      <span>Personalised With Initials</span>
+    </li>
+    <li>
+      <div class="trust-icon-box"><svg aria-hidden="true"><use href="#i-leaf"/></svg></div>
+      <span>Plastic-Free Eco Packaging</span>
+    </li>
+  </ul>
+</div>
+
+<!-- ============================================================
+     CATEGORY SHOWCASE CARDS
+     ============================================================ -->
+<section class="section" id="categories">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Curated Crafts</p>
+      <h2>Two Artistic Worlds, One Boutique Studio</h2>
+      <p class="lede" style="margin:0 auto;">Explore our two signature collections — crystal botanical resin homeware and plush handcrafted yarn textiles.</p>
+    </div>
+
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="category-card-media">
+          <img src="images/resin_coasters.jpg" alt="Pressed Flower Resin Coasters with Gold Flakes" loading="lazy">
+          <span class="category-card-badge">Resin Artistry</span>
+        </div>
+        <div class="category-card-content">
+          <h3>Botanical Resin Art</h3>
+          <p>Preserved real dried wildflowers, daisies, gold leaf flakes, and seaside wave coasters cured slowly for crystal-clear longevity.</p>
+          <a class="btn btn-outline" href="#collections" onclick="setCatalogFilter('Resin')">Explore Resin Catalog</a>
+        </div>
+      </div>
+
+      <div class="category-card">
+        <div class="category-card-media">
+          <img src="images/crochet_tote.jpg" alt="Handcrafted Granny Square Crochet Tote Bag" loading="lazy">
+          <span class="category-card-badge">Crochet Craft</span>
+        </div>
+        <div class="category-card-content">
+          <h3>Handmade Crochet</h3>
+          <p>Vintage floral granny square tote bags, velvety hair scrunchies, cozy amigurumi plushies, and custom accessories spun with premium cotton yarn.</p>
+          <a class="btn btn-outline" href="#collections" onclick="setCatalogFilter('Crochet')">Explore Crochet Catalog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COLLECTIONS — SEARCH, FILTERS & PRODUCT GRID
+     ============================================================ -->
+<section class="section" style="padding-top:0;" id="collections">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Boutique Catalog</p>
+      <h2>Explore Our Handcrafted Creations</h2>
+      <p class="lede">Every piece can be customised in color, size, and inclusions. Filter or search to find your favourite piece.</p>
+    </div>
+
+    <div class="products-toolbar">
+      <div class="filter-tabs" role="tablist" aria-label="Product categories">
+        <button type="button" class="filter-tab is-active" data-filter="all" role="tab">All Pieces (<span id="countAll">14</span>)</button>
+        <button type="button" class="filter-tab" data-filter="featured" role="tab">✨ Favourites</button>
+        <button type="button" class="filter-tab" data-filter="Resin" role="tab">🌸 Botanical Resin</button>
+        <button type="button" class="filter-tab" data-filter="Crochet" role="tab">🧶 Hand Crochet</button>
+        <button type="button" class="filter-tab" data-filter="under500" role="tab">🎁 Under ₹500</button>
+      </div>
+
+      <div class="search-box-wrap">
+        <svg class="search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input type="text" class="search-input" id="catalogSearch" placeholder="Search coasters, tote, keychain..." aria-label="Search catalog products">
+      </div>
+    </div>
+
+    <div class="product-grid" id="productCatalogGrid" aria-live="polite">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <p class="section-note" style="margin-top:28px; font-size:0.88rem; color:var(--ink-soft); text-align:center;">
+      Note: Listed prices are starting estimates for custom handcrafted orders. Each unique piece receives an exact final quote on WhatsApp with no obligation.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     CUSTOM ORDER EXPLAINER
+     ============================================================ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="explainer">
+      <div>
+        <p class="eyebrow" style="color:var(--amber-soft);">Custom Commissions</p>
+        <h2>Have an idea in mind? Let's bring it to life.</h2>
+        <p class="lede">Looking for custom anniversary coasters with wedding flowers? A tote bag in your favourite color palette? Or an initial letter keychain gift for a loved one? Share your vision and we'll craft it with precision.</p>
+        
+        <ul class="explainer-list">
+          <li>
+            <div class="explainer-icon-circle"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+            <span>No advance payment needed to enquire — we quote transparently on WhatsApp first.</span>
+          </li>
+          <li>
+            <div class="explainer-icon-circle"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+            <span>Upload or send any screenshot, Pinterest photo, or color swatch for reference.</span>
+          </li>
+          <li>
+            <div class="explainer-icon-circle"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+            <span>Pan-India safe delivery with moisture-resistant and bubble-safe packing.</span>
+          </li>
+        </ul>
+
+        <a class="btn btn-amber" href="#custom-order" style="margin-top:28px; width:fit-content;">
+          Request a Custom Piece
+        </a>
+      </div>
+
+      <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(255,255,255,0.15);">
+        <img src="images/resin_dish.jpg" alt="Handmade resin floral trinket dish" loading="lazy" style="width:100%; aspect-ratio:1/1; object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS & CUSTOM ORDER FORM
+     ============================================================ -->
+<section class="section" id="custom-order">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Seamless Process</p>
+      <h2>From Inspiration to Your Doorstep in 4 Steps</h2>
+      <p class="lede" style="margin: 0 auto;">No complicated checkout forms. Simply select your pieces, add your personal touch, and finalize your order directly over WhatsApp.</p>
+    </div>
+
+    <div class="steps" id="stepsList">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>Pick Your Piece</h3>
+        <p>Select from our catalog or enter your own custom bespoke request.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>Add Preferences</h3>
+        <p>Choose flower tones, yarn shades, initials, sizes, and special notes.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>Attach Reference</h3>
+        <p>Optional photo upload or screenshot helps us align with your exact taste.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h3>Chat on WhatsApp</h3>
+        <p>Review final quote, production schedule, and confirm before making.</p>
+      </div>
+    </div>
+
+    <!-- Order Builder Layout: Form on Left + WhatsApp Preview on Right -->
+    <div class="order-builder-layout">
+      <div class="order-panel">
+        <div class="order-form" id="orderForm">
+          <h3 style="font-size:1.6rem; margin-bottom:8px;">Custom Order Request</h3>
+          <p class="lede" style="margin-bottom:28px; font-size:0.96rem;">Fill in your details below. Only your name and WhatsApp contact number are required. Your order message updates in real-time.</p>
+
+          <form id="customOrderForm" novalidate>
+            <div class="form-grid cols-2">
+              <div class="field" data-field="name">
+                <label for="ofName">Your Full Name *</label>
+                <input type="text" id="ofName" name="name" placeholder="e.g. Ananya Sharma" autocomplete="name" required>
+                <span class="field-error">Please enter your name so we know who we're chatting with.</span>
+              </div>
+              <div class="field" data-field="phone">
+                <label for="ofPhone">WhatsApp Number *</label>
+                <input type="tel" id="ofPhone" name="phone" placeholder="e.g. 9876543210" autocomplete="tel" inputmode="tel" required>
+                <span class="field-error">Please provide a valid 10-digit mobile or WhatsApp number.</span>
+              </div>
+            </div>
+
+            <div class="form-grid cols-2" style="margin-top:20px;">
+              <div class="field" data-field="email">
+                <label for="ofEmail">Email Address <span class="hint">(optional)</span></label>
+                <input type="email" id="ofEmail" name="email" placeholder="name@example.com" autocomplete="email">
+              </div>
+              <div class="field" data-field="category">
+                <label for="ofCategory">Primary Craft Category</label>
+                <select id="ofCategory" name="category">
+                  <option value="">Not sure yet / Both</option>
+                  <option value="Resin Art">Resin Art</option>
+                  <option value="Hand Crochet">Hand Crochet</option>
+                  <option value="Gift Hamper (Both)">Gift Hamper (Both)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid" style="margin-top:20px;">
+              <div class="field" data-field="product">
+                <label for="ofProduct">Product / Item Name <span class="hint">(or selected from catalog)</span></label>
+                <input type="text" id="ofProduct" name="product" placeholder="e.g. Pressed Flower Coaster Set (4 pcs)">
+              </div>
+            </div>
+
+            <div class="form-grid cols-2" style="margin-top:20px;">
+              <div class="field" data-field="colour">
+                <label for="ofColour">Color Theme / Flowers <span class="hint">(optional)</span></label>
+                <input type="text" id="ofColour" name="colour" placeholder="e.g. Pastel lavender, sage green, gold foil">
+              </div>
+              <div class="field" data-field="nameText">
+                <label for="ofNameText">Initials / Names / Text <span class="hint">(optional)</span></label>
+                <input type="text" id="ofNameText" name="nameText" placeholder="e.g. Letter 'S' & 'R' or 'Happy Birthday'">
+              </div>
+            </div>
+
+            <div class="form-grid" style="margin-top:20px;">
+              <fieldset>
+                <legend>Size / Quantity Preference <span class="hint">(optional)</span></legend>
+                <div class="radio-row" id="sizeRow">
+                  <div class="radio-chip"><input type="radio" name="size" id="sizeStandard" value="Standard Size" checked><label for="sizeStandard">Standard</label></div>
+                  <div class="radio-chip"><input type="radio" name="size" id="sizeSmall" value="Small / Petite"><label for="sizeSmall">Small / Petite</label></div>
+                  <div class="radio-chip"><input type="radio" name="size" id="sizeLarge" value="Large / Grand"><label for="sizeLarge">Large / Grand</label></div>
+                  <div class="radio-chip"><input type="radio" name="size" id="sizeUnsure" value="Custom Sizing"><label for="sizeUnsure">Custom / Sizing Advice</label></div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-grid" style="margin-top:20px;">
+              <div class="field" data-field="details">
+                <label for="ofDetails">Special Notes & Occasion <span class="hint">(optional)</span></label>
+                <textarea id="ofDetails" name="details" placeholder="Describe the occasion (Birthday, Housewarming, Wedding gift), timeline needed, or any specific design nuances."></textarea>
+              </div>
+            </div>
+
+            <div class="form-grid" style="margin-top:20px;">
+              <div class="field">
+                <label for="refUpload">Reference Photo / Design Swatch <span class="hint">(optional)</span></label>
+                <div class="upload-box" id="uploadBox">
+                  <svg aria-hidden="true"><use href="#i-upload"/></svg>
+                  <p><strong>Drag and drop reference image here</strong>, or click to browse<br><span style="font-size:0.8rem; color:var(--ink-light);">JPG, PNG or WEBP up to 8MB</span></p>
+                  <input type="file" id="refUpload" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" aria-describedby="uploadHelp">
+                </div>
+                <span id="uploadHelp" class="visually-hidden">Upload a reference photo to illustrate the style or colors you want.</span>
+                <div class="upload-error" id="uploadError">That file couldn't be loaded. Please choose a JPG, PNG or WEBP image under 8MB.</div>
+                
+                <div class="upload-preview" id="uploadPreview">
+                  <img id="uploadPreviewImg" alt="Selected photo thumbnail">
+                  <div>
+                    <div class="file-name" id="uploadFileName"></div>
+                    <div class="file-meta" id="uploadFileMeta"></div>
+                  </div>
+                  <button type="button" class="upload-remove" id="uploadRemove">Remove</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid cols-2" style="margin-top:20px;">
+              <div class="field" data-field="budget">
+                <label for="ofBudget">Target Budget <span class="hint">(optional)</span></label>
+                <select id="ofBudget" name="budget">
+                  <option value="">Flexible / Best suggestion</option>
+                  <option value="Under ₹500">Under ₹500</option>
+                  <option value="₹500 – ₹1,000">₹500 – ₹1,000</option>
+                  <option value="₹1,000 – ₹2,500">₹1,000 – ₹2,500</option>
+                  <option value="₹2,500+ (Hamper / Set)">₹2,500+ (Hamper / Bulk set)</option>
+                </select>
+              </div>
+              <div class="field" data-field="deliveryDate">
+                <label for="ofDeliveryDate">Needed By Date <span class="hint">(optional)</span></label>
+                <input type="text" id="ofDeliveryDate" name="deliveryDate" placeholder="e.g. Within 10 days / Oct 15">
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-whatsapp btn-block" style="font-size:1.05rem;">
+                <svg style="width:22px; height:22px;" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                Send Custom Order to WhatsApp
+              </button>
+              <p class="form-note">
+                🔒 No payment is charged right now. Clicking this opens a pre-filled chat with Yazh Creations on WhatsApp, where we'll confirm every custom detail and price before crafting.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Success Message -->
+        <div class="order-success" id="orderSuccess">
+          <div class="ok-badge"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+          <h3>Your Request is Ready!</h3>
+          <p>We've packaged your specifications into a tidy WhatsApp inquiry. Click the button below to start our chat directly with our artisan.</p>
+          <a class="btn btn-whatsapp" id="successWhatsappLink" href="#" target="_blank" rel="noopener">
+            <svg style="width:22px; height:22px;" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Continue Chat on WhatsApp
+          </a>
+          <div style="margin-top:20px;">
+            <button type="button" class="btn btn-outline btn-sm" id="startOverBtn">Start a New Inquiry</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-Time WhatsApp Message Preview & Selected Tray -->
+      <aside class="order-sidebar-card">
+        <div>
+          <h3 class="sidebar-title">Selected Pieces</h3>
+          <p style="font-size:0.84rem; color:var(--ink-soft); margin-top:4px;">Pieces added from our catalog for this inquiry:</p>
+        </div>
+
+        <div class="selected-tray-list" id="sidebarTrayList">
+          <div class="tray-empty-hint">No items added to tray yet. Click "Add to Tray" or "Request This" on any product card!</div>
+        </div>
+
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <span style="font-size:0.88rem; font-weight:700; color:var(--ink);">Live WhatsApp Preview</span>
+            <span style="font-size:0.75rem; color:var(--sage); font-weight:600;">● Syncs Live</span>
+          </div>
+          <div class="wa-preview-box" id="waLivePreview">
+            <!-- Updated live via JS -->
+          </div>
+        </div>
+
+        <div style="background:var(--cream); padding:14px; border-radius:var(--radius-md); font-size:0.84rem; color:var(--ink-soft);">
+          <strong>Need urgent help?</strong> You can also message us directly at <a id="directWaLinkSidebar" href="#" target="_blank" style="color:var(--amber-dark); text-decoration:underline;">WhatsApp</a>.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLIENT REVIEWS & TESTIMONIALS
+     ============================================================ -->
+<section class="section" style="padding-top:0;" id="reviews">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Client Love</p>
+      <h2>Cherished by Craft Enthusiasts Across India</h2>
+      <p class="lede" style="margin:0 auto;">Hear from customers who received personalized pieces for weddings, gifting, and home aesthetics.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I ordered a customized botanical coaster set with daisies and gold flakes for our 5th anniversary. The resin is crystal clear without a single bubble, and it arrived in lovely plastic-free gift wrap!"</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">AS</div>
+          <div>
+            <div class="review-author-name">Ananya S.</div>
+            <div class="review-tag">Verified Buyer • Chennai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The granny square tote bag is even more vibrant in person! The stitches are tight and sturdy, perfect for my everyday carry and books. Communication on WhatsApp was so warm and helpful."</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">PR</div>
+          <div>
+            <div class="review-author-name">Pooja R.</div>
+            <div class="review-tag">Verified Buyer • Bangalore</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Got the amigurumi mini bear and resin letter keychain as return favours. All my friends were raving about the fine details. Truly authentic handcrafted art!"</p>
+        <div class="review-author-wrap">
+          <div class="review-avatar">VK</div>
+          <div>
+            <div class="review-author-name">Vikram K.</div>
+            <div class="review-tag">Verified Buyer • Mumbai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ ACCORDION & CARE GUIDE
+     ============================================================ -->
+<section class="section" style="padding-top:0;" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Got Questions?</p>
+      <h2>Frequently Asked Questions & Care Guide</h2>
+      <p class="lede" style="margin:0 auto;">Everything you need to know about crafting times, resin maintenance, washing crochet, and shipping.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item is-open">
+        <button type="button" class="faq-question" aria-expanded="true">
+          <span>How long does a custom resin or crochet piece take to make?</span>
+          <svg class="faq-icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer">
+          Resin items require careful multi-layer pouring and a minimum 48 to 72 hours cure time to achieve crystal clarity and scratch resistance. Crochet items take 2 to 4 days depending on intricacy. Standard turnaround time is 4 to 7 business days plus 2 to 4 days transit across India. If you need it for a specific date, let us know on WhatsApp and we will prioritize it!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          <span>Are the resin coasters heat resistant for hot tea and coffee mugs?</span>
+          <svg class="faq-icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer">
+          Yes! We use high-grade, heat-tolerant art resin that safely supports warm tea and coffee cups up to 75°C. To maintain their glossy finish, avoid placing boiling cookware directly from the stove onto them, and hand-wash with lukewarm water and a soft microfibre cloth.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          <span>How do I wash and care for hand-crocheted bags and scrunchies?</span>
+          <svg class="faq-icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer">
+          For crochet tote bags, scrunchies, and plush toys, we recommend gentle hand washing in cool water with mild liquid detergent. Reshape the bag while damp and dry flat on a clean towel in the shade. Avoid wringing or harsh machine tumble drying.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          <span>Can I preserve my own wedding or special event flowers in resin?</span>
+          <svg class="faq-icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer">
+          Absolutely! We frequently create sentimental keepsake preservation pieces from wedding garlands, graduation bouquets, and anniversary flowers. Contact us as soon as possible after your event so we can guide you on drying or mailing fresh blooms to our studio.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          <span>Do you ship all across India and how are fragile items packed?</span>
+          <svg class="faq-icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer">
+          We ship pan-India via express courier with tracked delivery. All resin items are individually wrapped in protective cushioning and nestled inside sturdy gift boxes, ensuring they reach you in pristine, ready-to-gift condition.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSTAGRAM SHOWCASE
+     ============================================================ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Studio Dispatch</p>
+      <h2>Follow Our Creative Journey</h2>
+      <p class="lede" style="margin:0 auto;">Daily resin demolding videos, new crochet colorways, and behind-the-scenes moments.</p>
+    </div>
+
+    <div class="insta-grid">
+      <div class="insta-tile">
+        <img src="images/resin_coasters.jpg" alt="Botanical flower resin coaster" loading="lazy">
+        <div class="insta-overlay"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+      </div>
+      <div class="insta-tile">
+        <img src="images/crochet_tote.jpg" alt="Handmade granny square tote bag" loading="lazy">
+        <div class="insta-overlay"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+      </div>
+      <div class="insta-tile">
+        <img src="images/resin_necklace.jpg" alt="Wildflower pendant necklace" loading="lazy">
+        <div class="insta-overlay"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+      </div>
+      <div class="insta-tile">
+        <img src="images/crochet_bear.jpg" alt="Amigurumi mini bear plush" loading="lazy">
+        <div class="insta-overlay"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+      </div>
+      <div class="insta-tile">
+        <img src="images/resin_keychain.jpg" alt="Personalized botanical letter keychain" loading="lazy">
+        <div class="insta-overlay"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+      </div>
+      <div class="insta-tile">
+        <img src="images/crochet_scrunchies.jpg" alt="Pastel crochet hair scrunchies" loading="lazy">
+        <div class="insta-overlay"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+      </div>
+    </div>
+
+    <div class="insta-follow-row">
+      <svg aria-hidden="true"><use href="#i-insta"/></svg>
+      <span>Follow us on Instagram <strong><a href="https://instagram.com/yazhcreations" target="_blank" rel="noopener" style="color:var(--amber-dark); text-decoration:underline;">@yazhcreations</a></strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT THE STUDIO
+     ============================================================ -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art-card">
+      <img src="images/studio_hero.jpg" alt="Yazh Creations studio workbench with handcrafted pieces" loading="lazy">
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">Our Philosophy</p>
+      <h2 style="margin-bottom:18px;">Slow-Crafted, Heart-Centered Artistry</h2>
+      <p>Yazh Creations was born out of an appreciation for tactile, slow-made art in an era of mass factory production. We believe that everyday objects — the coaster under your morning coffee, the necklace around your collar, or the tote on your shoulder — should hold personal meaning and warmth.</p>
+      <p>Each resin piece is cured over several days to ensure diamond clarity and durability. Every crochet stitch is counted by hand, creating heirlooms that carry character, love, and story.</p>
+      
+      <div class="studio-perks">
+        <div class="studio-perk">
+          <svg aria-hidden="true"><use href="#i-sparkle"/></svg>
+          <span>Non-Toxic UV Resin</span>
+        </div>
+        <div class="studio-perk">
+          <svg aria-hidden="true"><use href="#i-leaf"/></svg>
+          <span>Sustainably Sourced Flora</span>
+        </div>
+        <div class="studio-perk">
+          <svg aria-hidden="true"><use href="#i-yarn"/></svg>
+          <span>100% Combed Cotton Yarn</span>
+        </div>
+        <div class="studio-perk">
+          <svg aria-hidden="true"><use href="#i-heart"/></svg>
+          <span>Customized to Perfection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section class="section" style="padding-top:0;" id="contact">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Direct Contact</p>
+      <h2>We'd Love to Hear From You</h2>
+      <p class="lede" style="margin:0 auto;">Have a custom corporate enquiry, wedding order, or general question? Reach out through any channel below.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon-wrap"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></div>
+        <h3>WhatsApp Instant Chat</h3>
+        <p>The quickest way to share reference photos, get price quotes, and discuss your design.</p>
+        <a id="contactWhatsapp" href="#" target="_blank" rel="noopener">Chat on WhatsApp &rarr;</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon-wrap"><svg aria-hidden="true"><use href="#i-insta"/></svg></div>
+        <h3>Instagram DM</h3>
+        <p>Browse our latest reels, behind-the-scenes studio pouring, and customer story highlights.</p>
+        <a href="https://instagram.com/yazhcreations" target="_blank" rel="noopener">@yazhcreations &rarr;</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon-wrap"><svg aria-hidden="true"><use href="#i-mail"/></svg></div>
+        <h3>Email Inquiries</h3>
+        <p>Ideal for detailed bulk corporate orders, wholesale inquiries, or event gifting proposals.</p>
+        <a href="mailto:hello@yazhcreations.com">hello@yazhcreations.com &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     QUICK VIEW MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+      <svg style="width:20px; height:20px;" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <div class="modal-img-wrap">
+      <img id="modalImg" src="" alt="Product detail image">
+    </div>
+    <div class="modal-body">
+      <span class="product-cat-tag" id="modalCategory">Resin</span>
+      <h3 id="modalTitle" style="font-size:1.6rem; font-family:var(--serif);">Product Title</h3>
+      <p id="modalDesc" style="color:var(--ink-soft); font-size:0.96rem; line-height:1.6;">Product description details.</p>
+      
+      <div class="modal-spec-list">
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Craft Type:</span>
+          <span class="modal-spec-value" id="modalCraft">Handmade Botanical</span>
+        </div>
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Production Time:</span>
+          <span class="modal-spec-value" id="modalTime">3–5 Business Days</span>
+        </div>
+        <div class="modal-spec-row">
+          <span class="modal-spec-label">Customizable:</span>
+          <span class="modal-spec-value" id="modalCustom">Colors, Initials & Elements</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px;">
+        <span id="modalPrice" style="font-size:1.35rem; font-weight:700; color:var(--ink);">From ₹450</span>
+        <button type="button" class="btn btn-primary" id="modalRequestBtn">
+          Request This Piece
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FLOATING INQUIRY TRAY DRAWER BUTTON
+     ============================================================ -->
+<button type="button" class="tray-drawer-btn" id="floatingTrayBtn" onclick="scrollToCustomOrder()">
+  <svg style="width:20px; height:20px;" aria-hidden="true"><use href="#i-bag"/></svg>
+  <span>Custom Inquiry Tray (<span id="trayFloatingCount">0</span>)</span>
+</button>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="footer-brand" href="#home">Yazh <em>Creations</em></a>
+      <p>Artisanal botanical resin and hand-crocheted keepsakes, made to order and customized personally for you in India.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="#collections" onclick="setCatalogFilter('Resin')">Botanical Resin Art</a></li>
+        <li><a href="#collections" onclick="setCatalogFilter('Crochet')">Handmade Crochet</a></li>
+        <li><a href="#collections" onclick="setCatalogFilter('featured')">Featured Favourites</a></li>
+        <li><a href="#custom-order">Custom Commissions</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#faq">FAQ & Care Instructions</a></li>
+        <li><a href="#reviews">Customer Testimonials</a></li>
+        <li><a href="#about">Studio Philosophy</a></li>
+        <li><a id="footerWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp Support</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Direct Contact</h4>
+      <ul>
+        <li><a href="https://instagram.com/yazhcreations" target="_blank" rel="noopener">Instagram @yazhcreations</a></li>
+        <li><a href="mailto:hello@yazhcreations.com">hello@yazhcreations.com</a></li>
+        <li><a id="footerOrderLink" href="#custom-order">Request a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© <span id="yearNow"></span> Yazh Creations. All handcrafted pieces made to order.</span>
+    <span>Crafted with pride in India • Pan-India Tracked Shipping</span>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Action Button -->
+<a class="float-whatsapp" id="floatWhatsapp" href="#" target="_blank" rel="noopener" aria-label="Chat directly with Yazh Creations on WhatsApp">
+  <svg aria-hidden="true"><use href="#i-whatsapp"/></svg>
+</a>
+
+<!-- ============================================================
+     JAVASCRIPT APP LOGIC
+     ============================================================ -->
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     CONFIGURATION
+     ============================================================ */
+  var CONFIG = {
+    BRAND_NAME: "Yazh Creations",
+    // Digits only: Country code + number.
+    WHATSAPP_NUMBER: "919876543210", 
+    INSTAGRAM_HANDLE: "@yazhcreations",
+    EMAIL: "hello@yazhcreations.com"
+  };
+
+  /* ============================================================
+     RICH PRODUCT CATALOG DATA
+     ============================================================ */
+  var PRODUCTS = [
+    {
+      id: "r1",
+      name: "Pressed Botanical Flower Coasters",
+      category: "Resin",
+      price: "₹450",
+      numericPrice: 450,
+      description: "Set of crystal-clear coasters infused with real pressed daisies, lavender, ferns, and gold leaf flakes.",
+      image: "images/resin_coasters.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Epoxy Resin + Botanical Flowers", time: "3–4 Days Curing", material: "UV-Resistant Clear Resin, Gold Foil" }
+    },
+    {
+      id: "r2",
+      name: "Wildflower Teardrop Pendant Necklace",
+      category: "Resin",
+      price: "₹380",
+      numericPrice: 380,
+      description: "Preserved miniature blue forget-me-not blossoms sealed in a polished teardrop resin pendant on an 18k gold chain.",
+      image: "images/resin_necklace.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Jewellery Casting", time: "2–3 Days", material: "Real Flowers, 18k Gold Plated Chain" }
+    },
+    {
+      id: "c3",
+      name: "Vintage Granny Square Floral Tote Bag",
+      category: "Crochet",
+      price: "₹650",
+      numericPrice: 650,
+      description: "Artisanal boho everyday tote bag with raised botanical floral motifs in sage green, terracotta, and cream yarn.",
+      image: "images/crochet_tote.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Hand Crochet", time: "4–5 Days", material: "100% Combed Cotton Yarn, Double Stitched" }
+    },
+    {
+      id: "c1",
+      name: "Honey Amigurumi Mini Bear Plush",
+      category: "Crochet",
+      price: "₹550",
+      numericPrice: 550,
+      description: "Delightfully soft, palm-sized crocheted teddy bear with a tiny striped scarf, made to order in your custom palette.",
+      image: "images/crochet_bear.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Amigurumi Crochet", time: "3–4 Days", material: "Hypoallergenic Acrylic Yarn, Safety Eyes" }
+    },
+    {
+      id: "r5",
+      name: "Scalloped Daisy Jewelry Trinket Dish",
+      category: "Resin",
+      price: "₹420",
+      numericPrice: 420,
+      description: "Shallow scalloped resin dish adorned with real preserved white daisies and shimmering gold flakes for rings and earrings.",
+      image: "images/resin_dish.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Botanical Casting", time: "3–4 Days", material: "Clear Epoxy, Real Pressed Daisies" }
+    },
+    {
+      id: "r4",
+      name: "Artisanal Botanical Initial Keychain",
+      category: "Resin",
+      price: "₹180",
+      numericPrice: 180,
+      description: "Custom alphabetical letter keychain embedded with pink rose petals, baby's breath, and antique brass hardware.",
+      image: "images/resin_keychain.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Monogram Casting", time: "2 Days", material: "Resin, Dried Florals, Antique Brass Keyring" }
+    },
+    {
+      id: "c2",
+      name: "Pastel Ruffle Hair Scrunchie Trio",
+      category: "Crochet",
+      price: "₹250",
+      numericPrice: 250,
+      description: "Trio of plush, gentle crocheted hair scrunchies in lavender, blush rose, and warm ivory yarn. Zero hair snagging.",
+      image: "images/crochet_scrunchies.jpg",
+      customisable: true,
+      featured: true,
+      specs: { craft: "Hand Crochet", time: "1–2 Days", material: "Ultra-Soft Cotton Yarn, Stretchy Elastic" }
+    },
+    {
+      id: "r3",
+      name: "Minimalist Botanical Stud Earrings",
+      category: "Resin",
+      price: "₹280",
+      numericPrice: 280,
+      description: "Featherlight everyday geometric resin studs made with dried gypsophila flower buds on surgical stainless steel posts.",
+      image: "images/resin_necklace.jpg",
+      customisable: true,
+      featured: false,
+      specs: { craft: "Micro Resin Casting", time: "2 Days", material: "Hypoallergenic Stainless Steel, Resin" }
+    },
+    {
+      id: "r6",
+      name: "Ocean Wave Shoreline Coaster",
+      category: "Resin",
+      price: "₹450",
+      numericPrice: 450,
+      description: "Layered gradient turquoise and deep navy resin with realistic lacy white sea foam textures.",
+      image: "images/resin_coasters.jpg",
+      customisable: false,
+      featured: false,
+      specs: { craft: "Resin Wave Pouring", time: "3 Days", material: "Pigment Paste, Clear Resin Foam" }
+    },
+    {
+      id: "c4",
+      name: "Handmade Blossom Hair Clip Set",
+      category: "Crochet",
+      price: "₹150",
+      numericPrice: 150,
+      description: "Delicate textured 3D crocheted flower clips secured to sturdy alligator clips. Beautiful accessory for all hair types.",
+      image: "images/crochet_scrunchies.jpg",
+      customisable: true,
+      featured: false,
+      specs: { craft: "Hand Crochet", time: "1 Day", material: "Cotton Thread, Metal Alligator Clip" }
+    },
+    {
+      id: "c5",
+      name: "Insulated Coffee Mug Cup Cosy",
+      category: "Crochet",
+      price: "₹220",
+      numericPrice: 220,
+      description: "Snug knitted sleeve that keeps your takeaway cup or coffee mug comfortably warm without burning your fingers.",
+      image: "images/crochet_tote.jpg",
+      customisable: false,
+      featured: false,
+      specs: { craft: "Textured Crochet", time: "1–2 Days", material: "Thick Cotton Yarn, Wooden Button" }
+    },
+    {
+      id: "c6",
+      name: "Custom Crochet Name Keychain",
+      category: "Crochet",
+      price: "₹190",
+      numericPrice: 190,
+      description: "Handcrafted miniature crocheted lettering ribbon customized with any name or word of your choice.",
+      image: "images/resin_keychain.jpg",
+      customisable: true,
+      featured: false,
+      specs: { craft: "Lettering Embroidery", time: "2 Days", material: "Cotton Thread, Silver Keyring" }
+    },
+    {
+      id: "c7",
+      name: "Boho Plant Pot Hanger",
+      category: "Crochet",
+      price: "₹300",
+      numericPrice: 300,
+      description: "Macrame-style braided crochet sling to suspend small succulent pots and water propagation cuttings gracefully.",
+      image: "images/crochet_tote.jpg",
+      customisable: false,
+      featured: false,
+      specs: { craft: "Braided Crochet", time: "2 Days", material: "Sturdy Macrame Cotton Cord, Natural Wood Ring" }
+    },
+    {
+      id: "c8",
+      name: "Soft Cloud Baby Booties Set",
+      category: "Crochet",
+      price: "₹350",
+      numericPrice: 350,
+      description: "Ultra-cozy gentle booties crocheted with baby-safe bamboo-cotton blend yarn. An unforgettable newborn gift.",
+      image: "images/crochet_bear.jpg",
+      customisable: true,
+      featured: false,
+      specs: { craft: "Baby Crochet", time: "3 Days", material: "Organic Bamboo-Cotton Yarn, Breathable" }
+    }
+  ];
+
+  /* State */
+  var inquiryTray = [];
+  var currentFilter = "all";
+  var searchQuery = "";
+  var selectedFile = null;
+
+  /* ============================================================
+     WHATSAPP URL BUILDER
+     ============================================================ */
+  function getWhatsAppUrl(message) {
+    return "https://wa.me/" + CONFIG.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  }
+
+  function setupDefaultLinks() {
+    var defaultMsg = "Hi " + CONFIG.BRAND_NAME + "! I'm browsing your handmade resin & crochet creations and would like to ask a question.";
+    var url = getWhatsAppUrl(defaultMsg);
+    ["contactWhatsapp", "footerWhatsapp", "floatWhatsapp", "directWaLinkSidebar"].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.href = url;
+    });
+  }
+
+  /* ============================================================
+     RENDER CATALOG
+     ============================================================ */
+  function renderCatalog() {
+    var grid = document.getElementById("productCatalogGrid");
+    if(!grid) return;
+
+    var filtered = PRODUCTS.filter(function(p){
+      // Filter logic
+      if(currentFilter === "featured" && !p.featured) return false;
+      if(currentFilter === "Resin" && p.category !== "Resin") return false;
+      if(currentFilter === "Crochet" && p.category !== "Crochet") return false;
+      if(currentFilter === "under500" && p.numericPrice >= 500) return false;
+
+      // Search query logic
+      if(searchQuery) {
+        var q = searchQuery.toLowerCase();
+        var match = p.name.toLowerCase().indexOf(q) !== -1 ||
+                    p.description.toLowerCase().indexOf(q) !== -1 ||
+                    p.category.toLowerCase().indexOf(q) !== -1;
+        if(!match) return false;
+      }
+      return true;
+    });
+
+    if(filtered.length === 0) {
+      grid.innerHTML = '<div class="no-results-state">' +
+        '<svg style="width:48px;height:48px;margin:0 auto 12px;color:var(--amber);" aria-hidden="true"><use href="#i-search"/></svg>' +
+        '<h3 style="margin-bottom:6px;">No pieces matched your search</h3>' +
+        '<p>Try a different keyword or reset filters to browse all creations.</p>' +
+        '<button type="button" class="btn btn-outline btn-sm" style="margin-top:16px;" onclick="resetFilters()">View All Pieces</button>' +
+      '</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(function(p){
+      var badge = p.customisable ? '<span class="product-badge-custom">Customisable</span>' : '';
+      var isAdded = inquiryTray.some(function(item){ return item.id === p.id; });
+      var trayIcon = isAdded ? '<svg style="width:16px;height:16px;" aria-hidden="true"><use href="#i-check"/></svg>' : '<svg style="width:16px;height:16px;" aria-hidden="true"><use href="#i-plus"/></svg>';
+      var trayClass = isAdded ? 'btn-add-tray is-added' : 'btn-add-tray';
+      var trayTitle = isAdded ? 'In your inquiry tray' : 'Add to inquiry tray';
+
+      return '' +
+        '<article class="product-card" data-id="' + p.id + '">' +
+          '<div class="product-visual-wrap">' +
+            '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">' +
+            badge +
+            '<button type="button" class="quick-view-btn" data-id="' + p.id + '" title="Quick View Product Details" aria-label="Quick View ' + p.name + '">' +
+              '<svg style="width:18px;height:18px;" aria-hidden="true"><use href="#i-eye"/></svg>' +
+            '</button>' +
+          '</div>' +
+          '<div class="product-body">' +
+            '<span class="product-cat-tag">' + p.category + '</span>' +
+            '<h3 class="product-name">' + p.name + '</h3>' +
+            '<p class="product-desc">' + p.description + '</p>' +
+            '<div class="product-foot">' +
+              '<div class="product-price-box">' +
+                '<span class="product-price-label">Starting</span>' +
+                '<span class="product-price-val">' + p.price + '</span>' +
+              '</div>' +
+              '<div class="product-actions-group">' +
+                '<button type="button" class="' + trayClass + '" data-id="' + p.id + '" title="' + trayTitle + '" aria-label="' + trayTitle + '">' +
+                  trayIcon +
+                '</button>' +
+                '<button type="button" class="btn-request-item" data-id="' + p.id + '">Request</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+    }).join("");
+  }
+
+  /* Filter tabs handler */
+  var filterTabs = document.querySelectorAll(".filter-tab");
+  filterTabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      filterTabs.forEach(function(t){ t.classList.remove("is-active"); });
+      tab.classList.add("is-active");
+      currentFilter = tab.dataset.filter;
+      renderCatalog();
+    });
+  });
+
+  window.setCatalogFilter = function(filterVal) {
+    currentFilter = filterVal;
+    filterTabs.forEach(function(t){
+      t.classList.toggle("is-active", t.dataset.filter === filterVal);
+    });
+    var target = document.getElementById("collections");
+    if(target) target.scrollIntoView({ behavior:"smooth" });
+    renderCatalog();
+  };
+
+  window.resetFilters = function() {
+    searchQuery = "";
+    var searchInput = document.getElementById("catalogSearch");
+    if(searchInput) searchInput.value = "";
+    window.setCatalogFilter("all");
+  };
+
+  /* Search input handler */
+  var searchInput = document.getElementById("catalogSearch");
+  if(searchInput){
+    searchInput.addEventListener("input", function(e){
+      searchQuery = e.target.value.trim();
+      renderCatalog();
+    });
+  }
+
+  /* ============================================================
+     TRAY / INQUIRY BASKET MANAGEMENT
+     ============================================================ */
+  function updateTrayUI() {
+    var count = inquiryTray.length;
+    var navCount = document.getElementById("navTrayCount");
+    var floatingCount = document.getElementById("trayFloatingCount");
+    var floatingBtn = document.getElementById("floatingTrayBtn");
+    
+    if(navCount) navCount.textContent = count;
+    if(floatingCount) floatingCount.textContent = count;
+    if(floatingBtn) floatingBtn.classList.toggle("is-active", count > 0);
+
+    var listEl = document.getElementById("sidebarTrayList");
+    if(listEl) {
+      if(count === 0) {
+        listEl.innerHTML = '<div class="tray-empty-hint">No items added to tray yet. Click "Add to Tray" or "Request This" on any product card!</div>';
+      } else {
+        listEl.innerHTML = inquiryTray.map(function(item, idx){
+          return '' +
+            '<div class="tray-item">' +
+              '<div>' +
+                '<div class="tray-item-name">' + item.name + '</div>' +
+                '<div style="font-size:0.75rem; color:var(--ink-soft);">' + item.category + ' • ' + item.price + '</div>' +
+              '</div>' +
+              '<button type="button" class="tray-item-remove" data-index="' + idx + '" title="Remove item">✕</button>' +
+            '</div>';
+        }).join("");
+      }
+    }
+
+    renderCatalog();
+    updateLiveMessagePreview();
+  }
+
+  function toggleTrayItem(productId) {
+    var existingIndex = inquiryTray.findIndex(function(it){ return it.id === productId; });
+    if(existingIndex > -1) {
+      inquiryTray.splice(existingIndex, 1);
+    } else {
+      var prod = PRODUCTS.find(function(p){ return p.id === productId; });
+      if(prod) {
+        inquiryTray.push(prod);
+        // Pre-fill form category and product name if empty
+        var catSelect = document.getElementById("ofCategory");
+        var prodField = document.getElementById("ofProduct");
+        if(catSelect && !catSelect.value) catSelect.value = prod.category === "Resin" ? "Resin Art" : "Hand Crochet";
+        if(prodField && !prodField.value) prodField.value = prod.name;
+      }
+    }
+    updateTrayUI();
+  }
+
+  window.scrollToCustomOrder = function() {
+    var section = document.getElementById("custom-order");
+    if(section) section.scrollIntoView({ behavior:"smooth" });
+  };
+
+  var navTrayBtn = document.getElementById("navTrayBtn");
+  if(navTrayBtn) navTrayBtn.addEventListener("click", window.scrollToCustomOrder);
+
+  /* Delegated clicks on catalog grid */
+  document.addEventListener("click", function(e){
+    // Tray toggle button
+    var trayBtn = e.target.closest(".btn-add-tray");
+    if(trayBtn) {
+      var pid = trayBtn.dataset.id;
+      toggleTrayItem(pid);
+      return;
+    }
+
+    // Request button
+    var reqBtn = e.target.closest(".btn-request-item");
+    if(reqBtn) {
+      var pId = reqBtn.dataset.id;
+      var item = PRODUCTS.find(function(p){ return p.id === pId; });
+      if(item) {
+        if(!inquiryTray.some(function(it){ return it.id === item.id; })) {
+          inquiryTray.push(item);
+          updateTrayUI();
+        }
+        var catSelect = document.getElementById("ofCategory");
+        var prodField = document.getElementById("ofProduct");
+        if(catSelect) catSelect.value = item.category === "Resin" ? "Resin Art" : "Hand Crochet";
+        if(prodField) prodField.value = item.name;
+
+        window.scrollToCustomOrder();
+        setTimeout(function(){
+          var nameField = document.getElementById("ofName");
+          if(nameField) nameField.focus();
+        }, 500);
+      }
+      return;
+    }
+
+    // Quick view button
+    var qvBtn = e.target.closest(".quick-view-btn");
+    if(qvBtn) {
+      var pIdQv = qvBtn.dataset.id;
+      openQuickView(pIdQv);
+      return;
+    }
+
+    // Tray item remove click
+    var removeBtn = e.target.closest(".tray-item-remove");
+    if(removeBtn) {
+      var idx = parseInt(removeBtn.dataset.index, 10);
+      if(!isNaN(idx) && inquiryTray[idx]) {
+        inquiryTray.splice(idx, 1);
+        updateTrayUI();
+      }
+      return;
+    }
+  });
+
+  /* ============================================================
+     QUICK VIEW MODAL LOGIC
+     ============================================================ */
+  var quickViewModal = document.getElementById("quickViewModal");
+  var modalCloseBtn = document.getElementById("modalCloseBtn");
+  var modalRequestBtn = document.getElementById("modalRequestBtn");
+  var currentModalItem = null;
+
+  function openQuickView(productId) {
+    var p = PRODUCTS.find(function(it){ return it.id === productId; });
+    if(!p || !quickViewModal) return;
+    currentModalItem = p;
+
+    document.getElementById("modalImg").src = p.image;
+    document.getElementById("modalImg").alt = p.name;
+    document.getElementById("modalCategory").textContent = p.category;
+    document.getElementById("modalTitle").textContent = p.name;
+    document.getElementById("modalDesc").textContent = p.description;
+    document.getElementById("modalPrice").textContent = "From " + p.price;
+    document.getElementById("modalCraft").textContent = p.specs.craft;
+    document.getElementById("modalTime").textContent = p.specs.time;
+    document.getElementById("modalCustom").textContent = p.specs.material;
+
+    quickViewModal.classList.add("is-open");
+    quickViewModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeQuickView() {
+    if(!quickViewModal) return;
+    quickViewModal.classList.remove("is-open");
+    quickViewModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    currentModalItem = null;
+  }
+
+  if(modalCloseBtn) modalCloseBtn.addEventListener("click", closeQuickView);
+  if(quickViewModal) {
+    quickViewModal.addEventListener("click", function(e){
+      if(e.target === quickViewModal) closeQuickView();
+    });
+  }
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && quickViewModal && quickViewModal.classList.contains("is-open")) {
+      closeQuickView();
+    }
+  });
+
+  if(modalRequestBtn) {
+    modalRequestBtn.addEventListener("click", function(){
+      if(currentModalItem) {
+        if(!inquiryTray.some(function(it){ return it.id === currentModalItem.id; })) {
+          inquiryTray.push(currentModalItem);
+          updateTrayUI();
+        }
+        var catSelect = document.getElementById("ofCategory");
+        var prodField = document.getElementById("ofProduct");
+        if(catSelect) catSelect.value = currentModalItem.category === "Resin" ? "Resin Art" : "Hand Crochet";
+        if(prodField) prodField.value = currentModalItem.name;
+      }
+      closeQuickView();
+      window.scrollToCustomOrder();
+      setTimeout(function(){
+        var nameField = document.getElementById("ofName");
+        if(nameField) nameField.focus();
+      }, 500);
+    });
+  }
+
+  /* ============================================================
+     LIVE WHATSAPP PREVIEW & FORM DATA GATHERING
+     ============================================================ */
+  var form = document.getElementById("customOrderForm");
+  var livePreviewBox = document.getElementById("waLivePreview");
+
+  function getFormData() {
+    if(!form) return {};
+    return {
+      name: (form.name ? form.name.value.trim() : ""),
+      phone: (form.phone ? form.phone.value.trim() : ""),
+      email: (form.email ? form.email.value.trim() : ""),
+      category: (form.category ? form.category.value : ""),
+      product: (form.product ? form.product.value.trim() : ""),
+      colour: (form.colour ? form.colour.value.trim() : ""),
+      nameText: (form.nameText ? form.nameText.value.trim() : ""),
+      size: (form.querySelector('input[name="size"]:checked') || {}).value || "Standard",
+      budget: (form.budget ? form.budget.value : ""),
+      deliveryDate: (form.deliveryDate ? form.deliveryDate.value.trim() : ""),
+      details: (form.details ? form.details.value.trim() : "")
+    };
+  }
+
+  function formatWhatsAppMessage(data) {
+    var lines = [];
+    lines.push("✨ *New Custom Order Inquiry — " + CONFIG.BRAND_NAME + "*");
+    lines.push("━━━━━━━━━━━━━━━━━━━━");
+    lines.push("👤 *Client Name:* " + (data.name || "[Your Name]"));
+    lines.push("📞 *Phone/WhatsApp:* " + (data.phone || "[Your Number]"));
+    if(data.email) lines.push("✉️ *Email:* " + data.email);
+    
+    if(inquiryTray.length > 0) {
+      lines.push("");
+      lines.push("🛍️ *Selected Pieces (" + inquiryTray.length + "):*");
+      inquiryTray.forEach(function(item, i){
+        lines.push("  " + (i + 1) + ". " + item.name + " (" + item.category + " — " + item.price + ")");
+      });
+    }
+
+    if(data.category) lines.push("🏷️ *Category:* " + data.category);
+    if(data.product && inquiryTray.length === 0) lines.push("📦 *Product Idea:* " + data.product);
+    if(data.colour) lines.push("🎨 *Colors / Flowers:* " + data.colour);
+    if(data.nameText) lines.push("🔤 *Initials / Text:* " + data.nameText);
+    if(data.size) lines.push("📏 *Preferred Size:* " + data.size);
+    if(data.budget) lines.push("💰 *Target Budget:* " + data.budget);
+    if(data.deliveryDate) lines.push("🗓️ *Needed By:* " + data.deliveryDate);
+    if(data.details) {
+      lines.push("");
+      lines.push("📝 *Notes / Occasion:* " + data.details);
+    }
+    if(selectedFile) {
+      lines.push("");
+      lines.push("📷 *(I have a reference photo ready to attach in this chat)*");
+    }
+    lines.push("━━━━━━━━━━━━━━━━━━━━");
+    lines.push("Looking forward to your quote and design advice!");
+    return lines.join("\n");
+  }
+
+  function updateLiveMessagePreview() {
+    if(!livePreviewBox) return;
+    var data = getFormData();
+    livePreviewBox.textContent = formatWhatsAppMessage(data);
+  }
+
+  if(form) {
+    form.addEventListener("input", updateLiveMessagePreview);
+    form.addEventListener("change", updateLiveMessagePreview);
+  }
+
+  /* ============================================================
+     FILE UPLOAD HANDLER
+     ============================================================ */
+  var uploadBox = document.getElementById("uploadBox");
+  var uploadInput = document.getElementById("refUpload");
+  var uploadPreview = document.getElementById("uploadPreview");
+  var uploadPreviewImg = document.getElementById("uploadPreviewImg");
+  var uploadFileName = document.getElementById("uploadFileName");
+  var uploadFileMeta = document.getElementById("uploadFileMeta");
+  var uploadRemove = document.getElementById("uploadRemove");
+  var uploadError = document.getElementById("uploadError");
+
+  var ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
+  var MAX_BYTES = 8 * 1024 * 1024; // 8MB
+
+  function formatBytes(bytes) {
+    if(bytes < 1024) return bytes + " B";
+    if(bytes < 1024*1024) return Math.round(bytes/1024) + " KB";
+    return (bytes/(1024*1024)).toFixed(1) + " MB";
+  }
+
+  function clearUpload() {
+    selectedFile = null;
+    if(uploadInput) uploadInput.value = "";
+    if(uploadPreview) uploadPreview.classList.remove("is-visible");
+    if(uploadBox) uploadBox.style.display = "";
+    if(uploadError) uploadError.classList.remove("is-visible");
+    updateLiveMessagePreview();
+  }
+
+  function handleFile(file) {
+    if(!file) return;
+    if(ALLOWED_TYPES.indexOf(file.type) === -1 || file.size > MAX_BYTES) {
+      if(uploadError) uploadError.classList.add("is-visible");
+      clearUpload();
+      return;
+    }
+    if(uploadError) uploadError.classList.remove("is-visible");
+    selectedFile = file;
+
+    var reader = new FileReader();
+    reader.onload = function(e){
+      if(uploadPreviewImg){
+        uploadPreviewImg.src = e.target.result;
+      }
+      if(uploadFileName) uploadFileName.textContent = file.name;
+      if(uploadFileMeta) uploadFileMeta.textContent = formatBytes(file.size);
+      if(uploadPreview) uploadPreview.classList.add("is-visible");
+      if(uploadBox) uploadBox.style.display = "none";
+      updateLiveMessagePreview();
+    };
+    reader.readAsDataURL(file);
+  }
+
+  if(uploadInput) {
+    uploadInput.addEventListener("change", function(e){
+      handleFile(e.target.files && e.target.files[0]);
+    });
+  }
+
+  if(uploadBox) {
+    ["dragenter", "dragover"].forEach(function(evt){
+      uploadBox.addEventListener(evt, function(e){
+        e.preventDefault(); e.stopPropagation();
+        uploadBox.classList.add("is-drag");
+      });
+    });
+    ["dragleave", "drop"].forEach(function(evt){
+      uploadBox.addEventListener(evt, function(e){
+        e.preventDefault(); e.stopPropagation();
+        uploadBox.classList.remove("is-drag");
+      });
+    });
+    uploadBox.addEventListener("drop", function(e){
+      var file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      handleFile(file);
+    });
+  }
+
+  if(uploadRemove) {
+    uploadRemove.addEventListener("click", clearUpload);
+  }
+
+  /* ============================================================
+     FORM SUBMIT & WHATSAPP REDIRECTION
+     ============================================================ */
+  var orderFormEl = document.getElementById("orderForm");
+  var orderSuccessEl = document.getElementById("orderSuccess");
+  var successWhatsappLink = document.getElementById("successWhatsappLink");
+  var startOverBtn = document.getElementById("startOverBtn");
+
+  function setFieldError(fieldName, hasError) {
+    var wrap = form.querySelector('[data-field="' + fieldName + '"]');
+    if(wrap) wrap.classList.toggle("has-error", hasError);
+  }
+
+  if(form) {
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      var nameVal = form.name.value.trim();
+      var phoneVal = form.phone.value.trim();
+      var nameOk = nameVal.length >= 2;
+      var cleanDigits = phoneVal.replace(/[^0-9]/g, "");
+      var phoneOk = cleanDigits.length >= 10;
+
+      setFieldError("name", !nameOk);
+      setFieldError("phone", !phoneOk);
+
+      if(!nameOk || !phoneOk) {
+        var firstInvalid = form.querySelector(".has-error input, .has-error select, .has-error textarea");
+        if(firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      var data = getFormData();
+      var message = formatWhatsAppMessage(data);
+      var waUrl = getWhatsAppUrl(message);
+
+      if(successWhatsappLink) successWhatsappLink.href = waUrl;
+
+      // Automatically open WhatsApp in new tab for immediate action
+      window.open(waUrl, "_blank");
+
+      if(orderFormEl) orderFormEl.classList.add("is-hidden");
+      if(orderSuccessEl) orderSuccessEl.classList.add("is-visible");
+      orderSuccessEl.scrollIntoView({ behavior:"smooth", block:"start" });
+    });
+  }
+
+  if(startOverBtn) {
+    startOverBtn.addEventListener("click", function(){
+      form.reset();
+      clearUpload();
+      inquiryTray = [];
+      updateTrayUI();
+      ["name", "phone"].forEach(function(f){ setFieldError(f, false); });
+      if(orderSuccessEl) orderSuccessEl.classList.remove("is-visible");
+      if(orderFormEl) orderFormEl.classList.remove("is-hidden");
+      window.scrollToCustomOrder();
+    });
+  }
+
+  /* ============================================================
+     FAQ ACCORDION INTERACTION
+     ============================================================ */
+  var faqQuestions = document.querySelectorAll(".faq-question");
+  faqQuestions.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var item = btn.closest(".faq-item");
+      var isOpen = item.classList.contains("is-open");
+      
+      // Close other accordion tabs for tidy display
+      document.querySelectorAll(".faq-item").forEach(function(i){
+        i.classList.remove("is-open");
+        var q = i.querySelector(".faq-question");
+        if(q) q.setAttribute("aria-expanded", "false");
+      });
+
+      if(!isOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  /* ============================================================
+     STICKY HEADER & MOBILE NAV
+     ============================================================ */
+  var header = document.getElementById("site-header");
+  function onScroll(){
+    if(!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  var menuToggle = document.getElementById("menuToggle");
+  var mobileMenu = document.getElementById("mobileMenu");
+
+  function setMobileMenu(open){
+    if(!menuToggle || !mobileMenu) return;
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    mobileMenu.classList.toggle("is-open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  if(menuToggle && mobileMenu){
+    menuToggle.addEventListener("click", function(){
+      setMobileMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+    mobileMenu.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){ setMobileMenu(false); });
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") setMobileMenu(false);
+    });
+  }
+
+  /* ============================================================
+     ENTRANCE ANIMATIONS (REVEAL)
+     ============================================================ */
+  window.requestAnimationFrame(function(){
+    setTimeout(function(){
+      var copy = document.getElementById("heroCopy");
+      var visual = document.getElementById("heroVisual");
+      if(copy) copy.classList.add("is-shown");
+      if(visual) { visual.style.transitionDelay = "150ms"; visual.classList.add("is-shown"); }
+    }, 60);
+  });
+
+  /* ============================================================
+     INITIALIZATION
+     ============================================================ */
+  renderCatalog();
+  setupDefaultLinks();
+  updateLiveMessagePreview();
+  var yearEl = document.getElementById("yearNow");
+  if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
